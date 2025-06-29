@@ -95,3 +95,142 @@ body {
     font-size: 50px;
     font-weight: 700;
 }
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+
+.hobbies {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 24px 18px;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.hobbies h2, .container h1 {
+    color: #1d539f;
+    margin-bottom: 16px;
+}
+
+.hobbies ul {
+    list-style: disc inside;
+    padding-left: 0;
+    margin: 0 auto 16px auto;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.15em;
+    color: #333;
+}
+
+.hobbies a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #1d539f;
+    text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #1d539f;
+    border-radius: 5px;
+    padding: 8px 18px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.hobbies a:hover {
+    background: #1d539f;
+    color: #fff;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+}
+
+section {
+    margin-bottom: 36px;
+}
+
+.about-me, .professional-experience, .education, .places-traveled {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 24px 18px;
+    margin: 0 auto 24px auto;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    max-width: 700px;
+}
+
+.about-me h2,
+.professional-experience h2,
+.education h2,
+.places-traveled h2 {
+    color: #1d539f;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.job, .degree {
+    margin-bottom: 18px;
+}
+
+.job h3, .degree h3 {
+    margin: 0;
+    color: #333;
+}
+
+.job-date, .job-company, .degree-date, .degree-school {
+    display: block;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.job ul, .degree ul {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+.places-traveled {
+    text-align: center;
+}
+
+.places-image {
+    width: 200px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+}
+
+.places-list {
+    list-style: disc inside;
+    padding-left: 0;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.1em;
+    color: #333;
+}
+
+@media (max-width: 800px) {
+    .container, .about-me, .professional-experience, .education, .places-traveled {
+        max-width: 98vw;
+        padding: 18px 6vw;
+    }
+    .profile h1 {
+        font-size: 2em;
+    }
+    .nav-logo img {
+        width: 120px;
+    }
+}
+

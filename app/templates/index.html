@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
 
-    <link lang='sass' rel="stylesheet" href="./static/styles/main.css">
+    <link lang='sass' rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
     <link rel='icon' href='./static/img/favicon.ico' type='image/x-icon' />
     <title>{{ title }}</title>
 </head>
@@ -24,9 +24,13 @@
         <div class="nav-content">
             <a href="/">
                 <div class="nav-logo">
-                    <img src="./static/img/logo.svg" />
+                    <img src="./static/img/pfp.jpg" />
                 </div>
             </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/hobbies">Hobbies</a>
+            </nav>
         </div>
     </header>
 
@@ -36,5 +40,118 @@
         </div>
         <h1>{{ title }}</h1>
     </div>
+
+    <section class="about-me">
+        <h2>About Me</h2>
+        <p>
+            Former math teacher with a passion for software development seeking to make a difference. Creating
+            technologies to empower the public.
+        </p>
+    </section>
+
+    <section class="professional-experience">
+        <h2>Professional Experience</h2>
+
+        <div class="job">
+            <h3>Software Development Intern</h3>
+            <span class="job-date">Feb 2024 - Dec 2024</span>
+            <span class="job-company">Abbott Diabetes Care</span>
+            <ul>
+                <li>Developed features for Abbott mobile apps, improving usability and engagement for patients and
+                    providers.</li>
+                <li>Created new user tutorials and configuration options for React Native mobile apps.</li>
+                <li>Achieved 90% test coverage on mobile app screens and UI library using react-testing-library and
+                    reg-viz/storycap, decreasing bug reports by 15%.</li>
+                <li>Developed data visualizations for the UI library with D3.js, used in 32 instances across 3 apps.
+                </li>
+                <li>Documented the UI library with Storybook and tested with functional and visual regression tests.
+                </li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Software Engineering Intern</h3>
+            <span class="job-date">Jul 2024 - Sep 2024</span>
+            <span class="job-company">Coforma</span>
+            <ul>
+                <li>Developed tools for government reporting to support the Centers for Medicare & Medicaid Services.
+                </li>
+                <li>Created a script to generate Storybook files, saving 60+ hours across 100+ components.</li>
+                <li>Documented APIs with Swagger, boosting backend development speed by 50%.</li>
+                <li>Standardized project READMEs to cut documentation time by 80%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Shopify Web Developer & UX Writer</h3>
+            <span class="job-date">May 2023 - Mar 2024</span>
+            <span class="job-company">Phil's Drills</span>
+            <ul>
+                <li>Managed and optimized e-commerce operations to improve product visibility and streamline checkout
+                    processes.</li>
+                <li>Optimized user interfaces and Shopify themes, raising sales by 141% and reducing cart abandonment by
+                    34%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Web Development Intern</h3>
+            <span class="job-date">Jul 2023 - Dec 2023</span>
+            <span class="job-company">Bay Valley Tech</span>
+            <ul>
+                <li>Built and deployed 5 React apps with Vercel, reducing Firebase workflows to cut development time by
+                    40%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <h3>Web Design Teacher</h3>
+            <span class="job-date">Aug 2023 - Dec 2023</span>
+            <span class="job-company">Arise High School</span>
+            <ul>
+                <li>Guided 20+ high school students to create portfolio websites, boosting technical proficiency and
+                    digital literacy.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="education">
+        <h2>Education</h2>
+
+        <div class="degree">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <span class="degree-date">Expected May 2025</span>
+            <span class="degree-school">University of California, Berkeley</span>
+        </div>
+
+        <div class="degree">
+            <h3>Associate of Science in Mathematics</h3>
+            <span class="degree-date">May 2021</span>
+            <span class="degree-school">Diablo Valley College</span>
+        </div>
+    </section>
+
+    <section class="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Urban Photography</li>
+            <li>Board Game Design</li>
+        </ul>
+    </section>
+
+    <section class="places-traveled">
+        <h2>Places I've Traveled To</h2>
+        <img src="/static/img/places.png" alt="places" class="places-image" />
+        <ul class="places-list">
+            <li>Mexico</li>
+            <li>Puerto Rico</li>
+            <li>Dominican Republic</li>
+            <li>Costa Rica</li>
+            <li>Florida</li>
+        </ul>
+    </section>
+
+
 </body>
+
 </html>
