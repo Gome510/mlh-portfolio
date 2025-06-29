@@ -8,27 +8,88 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    work_experiences = [
+        {
+            "title": "Software Development Intern",
+            "date": "Feb 2024 - Dec 2024",
+            "company": "Abbott Diabetes Care",
+            "bullets": [
+                "Developed features for Abbott mobile apps, improving usability and engagement for patients and providers.",
+                "Created new user tutorials and configuration options for React Native mobile apps.",
+                "Achieved 90% test coverage on mobile app screens and UI library using react-testing-library and reg-viz/storycap, decreasing bug reports by 15%.",
+                "Developed data visualizations for the UI library with D3.js, used in 32 instances across 3 apps.",
+                "Documented the UI library with Storybook and tested with functional and visual regression tests."
+            ]
+        },
+        {
+            "title": "Software Engineering Intern",
+            "date": "Jul 2024 - Sep 2024",
+            "company": "Coforma",
+            "bullets": [
+                "Developed tools for government reporting to support the Centers for Medicare & Medicaid Services.",
+                "Created a script to generate Storybook files, saving 60+ hours across 100+ components.",
+                "Documented APIs with Swagger, boosting backend development speed by 50%.",
+                "Standardized project READMEs to cut documentation time by 80%."
+            ]
+        },
+        {
+            "title": "Shopify Web Developer & UX Writer",
+            "date": "May 2023 - Mar 2024",
+            "company": "Phil's Drills",
+            "bullets": [
+                "Managed and optimized e-commerce operations to improve product visibility and streamline checkout processes.",
+                "Optimized user interfaces and Shopify themes, raising sales by 141% and reducing cart abandonment by 34%."
+            ]
+        },
+        {
+            "title": "Web Development Intern",
+            "date": "Jul 2023 - Dec 2023",
+            "company": "Bay Valley Tech",
+            "bullets": [
+                "Built and deployed 5 React apps with Vercel, reducing Firebase workflows to cut development time by 40%."
+            ]
+        },
+        {
+            "title": "Web Design Teacher",
+            "date": "Aug 2023 - Dec 2023",
+            "company": "Arise High School",
+            "bullets": [
+                "Guided 20+ high school students to create portfolio websites, boosting technical proficiency and digital literacy."
+            ]
+        }
+    ]
+    educations = [
+        {
+            "degree": "Master of Education & Teaching Credential",
+            "date": "2022",
+            "school": "University of California: Santa Cruz"
+        },
+        {
+            "degree": "Bachelor of Math Education",
+            "date": "2021",
+            "school": "University of California: Santa Cruz"
+        },
+        {
+            "degree": "Associate of Computer Programming",
+            "date": "2025",
+            "school": "Laney College"
+        }
+    ]
+    hobbies = [
+        "Urban Photography",
+        "Board Game Design"
+    ]
+    return render_template(
+        'index.html',
+        work_experiences=work_experiences,
+        educations=educations,
+        hobbies=hobbies,
+        title="MLH Fellow",
+        url=os.getenv("URL")
+    )
 
 
 @app.route('/hobbies')
 def hobbies():
     return render_template('hobbies.html')
 
-
-# Example for work experience
-@app.route('/work')
-def work():
-    work_experiences = [
-        {
-            "title": "Software Engineer",
-            "date": "2023 - Present",
-            "company": "Tech Co",
-            "bullets": [
-                "Developed cool stuff.",
-                "Led a team of 5."
-            ]
-        },
-        # ...more jobs...
-    ]
-    return render_template('work_experience.html', work_experiences=work_experiences)
