@@ -129,3 +129,10 @@ def index():
 def hobbies():
     return render_template('hobbies.html')
 
+@app.route('/timeline')
+def timeline():
+    posts = [
+        model_to_dict(p)
+        for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
+    ]
+    return render_template('timeline.html', posts=posts)

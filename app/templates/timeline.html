@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timeline</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      padding: 32px;
+    }
+
+    h1 {
+      color: #1d539f;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    button {
+      background: #1d539f;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #163d6b;
+    }
+
+    .timeline-post {
+      border-bottom: 1px solid #eee;
+      padding: 16px 0;
+    }
+
+    .timeline-post:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-post .meta {
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 6px;
+    }
+
+    .timeline-post .content {
+      margin: 0;
+    }
+
+    .error {
+      color: #c00;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Timeline</h1>
+    <form id="timeline-form" method="post" action="/api/timeline_post" target="_blank">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="content" name="content" placeholder="What's on your mind?" rows="4" required></textarea>
+      <button type="submit">Post</button>
+      <div class="error" id="form-error" style="display:none;"></div>
+    </form>
+    <div id="timeline-posts">
+      {% if posts %}
+      {% for post in posts %}
+      <div class="timeline-post">
+        <div class="meta">
+          <strong>{{ post.name }}</strong> &lt;{{ post.email }}&gt; &mdash; {{ post.created_at }}
+        </div>
+        <div class="content">{{ post.content }}</div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p>No posts yet. Be the first to post!</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>
